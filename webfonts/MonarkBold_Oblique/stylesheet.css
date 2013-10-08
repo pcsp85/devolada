@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'monarkbold oblique';
+	src: url('monarkbold_oblique-webfont.eot');
+	src: url('monarkbold_oblique-webfont.eot?#iefix') format('embedded-opentype'),
+		url('monarkbold_oblique-webfont.woff') format('woff'),
+		url('monarkbold_oblique-webfont.ttf') format('truetype'),
+		url('monarkbold_oblique-webfont.svg') format('svg');
+}

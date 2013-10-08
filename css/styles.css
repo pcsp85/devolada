@@ -1,0 +1,448 @@
+@charset "utf-8";
+@import url("../webfonts/MonarkBold_Oblique/stylesheet.css");
+/* Medios fluidos sencillos
+   Nota: Los medios fluidos exigen la eliminación de los atributos de altura y anchura de los medios del código HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE 6 no admite max-width (anchura máxima), por lo que usa de manera predeterminada una anchura del 100% */
+.ie6 img {
+	width:100%; font-family:mo
+}
+
+/*
+	Propiedades de cuadrícula fluida de Dreamweaver
+	----------------------------------
+	dw-num-cols-mobile:		4;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	12;
+	dw-gutter-percentage:	25;
+	
+	Inspiración obtenida de "Responsive Web Design" de Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	y Golden Grid System de Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+/* Diseño móvil: 480 px e inferior. */
+
+.gridContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	font-family: sans-serif;
+}
+
+#head {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	height:173px;
+	margin-bottom:3px;
+	background:url(../images/head_back_mov.png) no-repeat center top #FFFFFF;
+}
+
+#menu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	font-family:"MonarkBold Oblique";
+	background:url(../images/mn_back.png);
+	margin-bottom:5px;
+	height:auto;
+}
+#menu img{
+	display:none;
+}
+#menu ul{ margin:0; padding:3px 0 0 10px;}
+#menu li{
+	float: left;
+	list-style: none;
+	color: #FFF;
+	height: 15px;
+	margin: 3px 1px;
+	padding: 15px;
+	min-width:80%;
+	cursor: pointer;
+	display: table-cell;
+	vertical-align: middle;
+	background: #363636;
+	font-size: 16px;
+}
+
+#donde {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	display: none;
+	text-align:center;
+	font-family:"Lucida Console", Monaco, monospace;
+	border:1px solid #333;
+	border-radius: 10px;
+	margin-bottom:10px;
+}
+#donde form{
+	padding:10px;
+}
+
+#cont {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	font-family:"Lucida Console", Monaco, monospace;
+	font-size:14px;
+}
+#cont h1{
+	color:#AE2929;
+	font-family:"monarkbold oblique";
+	font-size:25px;
+	font-weight:bolder;
+	margin-bottom:5px;
+}
+#cont h2{
+	color:#AE2929;
+	font-size:18px;
+	font-weight:bolder;
+}
+
+#promo{
+	background:url(../images/promo_back.png) no-repeat center top;
+	text-align:center;
+	width:64%;
+	height:305px;
+	padding:50px 18% 30px;
+	font-family:"Lucida Console", Monaco, monospace;
+	font-size:16px;
+}
+
+#izq{
+	width:95%;
+	padding-left:2.5%;
+	float:left;	
+}
+
+#der{
+	width:95%;
+	padding-right:2.5%;
+	float:right;	
+}
+
+#footer {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	background:#252323;
+	border-radius:8px;
+	text-align:center;
+	font-family:"MonarkBold Oblique";
+	font-size:14px;
+	padding:2% 0;
+	color:#FFF;
+	margin:15px 0;
+}
+#footer a{
+	text-decoration:none;
+	color:#FFF;
+}
+#footer div{
+	width:95%
+}
+#not{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#perfil{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	font-family:"Lucida Console", Monaco, monospace;
+}
+#perfil img{
+	width:40px;
+	height:50px;
+	float:left;
+	margin-right:10px;
+}
+#perfil strong{
+	color:#AE2929;
+}
+#perfil span:hover{
+	cursor:pointer;
+	font-weight:bolder;
+}
+.mn_activo{
+	background:#FFF !important;
+	color:#363636 !important ;
+}
+
+.fua{
+	clear:both;
+	text-align:right;
+	font-family:"Lucida Console", Monaco, monospace;
+	font-size:12px;
+	color:#666;
+	margin-top:7px;
+	padding-right: 15px;
+}
+.error{
+	text-align:center;
+	font-family:"MonarkBold Oblique";
+	color:#900;
+	font-size:17px;	
+}
+.usuarios img{
+	height:35px;
+	vertical-align:middle;
+	cursor:pointer;
+}
+.usuarios tr:hover{
+	background:#FBD9B3;
+}
+.usuarios tr:first-child{
+	background:none;
+}
+.usuarios td{
+	vertical-align:middle;
+	text-align:center;
+}
+.usuarios th{
+	text-align:center;
+}
+.f_usr{
+	padding:15px;
+}
+.f_usr label{
+	display:table-cell;
+	padding-left:10px;
+	padding-top:5px;
+}
+.f_usr input, select, textarea{
+	font-family:"monarkbold oblique";
+	font-weight:normal;
+}
+.f_usrver{
+	padding:15px;
+}
+.f_usrver label{
+	display:table-cell;
+	padding-left:10px;
+}
+.f_usrver input{
+	border:0;
+	background:none;
+	font-family:"monarkbold oblique";
+	font-weight:normal;
+}
+.f_usrver select{
+	border:0;
+	background:none;
+}
+.f_usrver textarea{
+	border:0;
+}
+.f_usrver .image{
+	display:none;
+}
+.paginas{
+	font-family:"monarkbold oblique";
+	font-size:16px;
+	text-align:center;
+	font-weight:bold;
+}
+.paginas strong{
+	color:#AE2929;
+	cursor:pointer;
+	margin:0 7px;
+}
+/* Diseño tableta: de 481 px a 768 px. Hereda estilos de: Diseño móvil. */
+
+@media only screen and (min-width: 481px) {
+.gridContainer {
+	width: 97.5%;
+	padding-left: 1.25%;
+	padding-right: 1.25%;
+}
+#head {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	height:279px;
+	margin-bottom:10px;
+	background:url(../images/head_back_tab.png) no-repeat center top;
+}
+#menu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	height:75px;
+}
+#menu img{
+	display:block;
+	float:right;
+}
+#menu ul{ margin:0; padding:0 0 0 10px;}
+#menu li{
+	padding: 27px 15px;
+	min-width:10px;
+	font-size:12px;
+}
+#donde {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: none;
+}
+#cont {
+	clear: both;
+	float: left;
+	margin-top: 10px;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#promo{
+	float:right;
+	width:245px;
+	height:305px;
+	padding:50px 20px 30px;
+}
+
+#inicio{
+	width:60%;
+	padding-top:80px;
+}
+
+#izq{
+	width:42.5%;
+	padding-left:2.5%;
+	float:left;	
+}
+
+#der{
+	width:42.5%;
+	padding-right:2.5%;
+	float:right;	
+}
+
+#footer {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	padding:1.5% 0;
+}
+#footer div{
+	width:47.5%;
+	float:left;
+}
+#not{
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 48.7179%;
+	display: block;
+}
+#perfil{
+	clear: none;
+	float: right;
+	margin-left: 2.5641%;
+	width: 48.7179%;
+	display: block;
+}
+}
+
+/* Diseño escritorio: de 769 px hasta un máximo de 1232 px.  Hereda estilos de: Diseño móvil y Diseño tableta. */
+
+@media only screen and (min-width: 769px) {
+.gridContainer {
+	width: 88.5%;
+	max-width: 855px;
+	padding-left: 0.75%;
+	padding-right: 0.75%;
+	margin: auto;
+}
+#head {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	height:358px;
+	background:url(../images/head_back_esc.png) no-repeat center top;
+}
+#menu {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#menu li{
+	font-size:14px;
+}
+
+#donde {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: none;
+}
+#cont {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#footer {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	padding:1.9% 0;
+}
+#not {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 49.1525%;
+	display: block;
+}
+#perfil {
+	clear: none;
+	float: right;
+	margin-left: 1.6949%;
+	width: 40.6779%;
+	display: block;
+}
+}
