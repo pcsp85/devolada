@@ -1,5 +1,5 @@
 <? session_start();
-
+error_reporting(0);
 /** Información para conexión a base de datos **/
 $ht='localhost';
 $us='devolada_voy';
