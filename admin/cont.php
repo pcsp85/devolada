@@ -363,7 +363,7 @@ if($_SESSION[dvv]!="activo"){
 				if($c[r_social]!='') $nor="$c[r_social] ($c[nom] $c[ap_pat] $c[ap_mat])";
 				else $nor="$c[nom] $c[ap_pat] $c[ap_mat]";
 			$titulo=ucwords($_POST[a]).' información';
-			echo '<script> setTimeout("get_info(\''.$c[grupo].'\',\'tarifas\',false);",50); setTimeout("$(\'#n_t\').val(\''.$c[n_t].'\');",700);</script>';
+			echo '<script> setTimeout("get_info(\''.$c[grupo].'\',\'tarifas\',\''.$c[n_t].'\');",250);</script>';
 		}else $titulo=ucwords($_POST[a]);
 		if($c[n_c]) while(strlen($c[n_c])<6) $c[n_c]='0'.$c[n_c];
 		echo '<h2>'.$titulo.'</h2><div id="get_inf"></div><form name="f_en" id="f_en" onsubmit="return false" class="f_usr'.$a.'"><input type="hidden" name="act" value="p_env"><input type="hidden" name="id_e" id="id_e" value="'.$c[id_e].'"><div><label><input type="text" id="guia" value="'.$c[guia].'" size="30" title="El número de guia se asigna automáticamente al generar el envío" readOnly><br>N° de guia</label><label><input type="text" name="n_c" id="n_c" value="'.$c[n_c].'" size="7" maxlength="6" onKeyPress="return numeros(event);" onKeyUp="if(this.value.length==6) get_info(this.value,\'cliente\',false);" '.$ro.'><br>N° de cliente</label><label><input type="text" id="nor" size="40" value="'.$nor.'" onKeyUp="get_info(this.value,\'clientes\',false);" '.$ro.'><br>Nombre o Razón social</label></div><div>'.$c[grupo].'<label><select id="servicio" onChange="$(\'#costo\').val(\'\'); get_info(this.value,\'tarifas\',false);" '.$di.'><option></option>';
@@ -428,7 +428,6 @@ if($_SESSION[dvv]!="activo"){
 		}else{
 			
 			foreach($_POST as $c=>$v) if($c!='id_e' && $c!='act') $datos.=" $c='$v',";
-			echo ("update envios set ".substr($datos,0,-1)." where id_e=$_POST[id_e]");
 			mysql_query("update envios set ".substr($datos,0,-1)." where id_e=$_POST[id_e]");
 			echo '<img src="../images/hecho.png"style="float:left; margin:5px 10px;"><div style="float:left; matgin-top:5px; max-width:280px;"><br>La información del envio se actualizó con éxito.</div>';
 		}
@@ -466,7 +465,11 @@ if($_SESSION[dvv]!="activo"){
 		}elseif($_POST[a]=="tarifas"){
 			echo '<script>$(\'#n_t\').empty(); $(\'#n_t\').append(\'<option value=""></option>\');';
             $ts=mysql_query("select n_t, tarifa from tarifas where grupo='$_POST[info]'");
-			while($t=mysql_fetch_array($ts)) echo ' $(\'#n_t\').append(\'<option value="'.$t[0].'">'.$t[1].'</option>\');';
+			while($t=mysql_fetch_array($ts)){
+				echo ' $(\'#n_t\').append(\'<option value="'.$t[0].'"';
+				if($_POST['r']==$t[0]) echo ' selected';
+				echo '>'.$t[1].'</option>\');';
+			}
             echo '</script>';
 		}elseif($_POST[a]=="costo"){
 			$co=mysql_fetch_array(mysql_query("select costo from tarifas where n_t=$_POST[info]"));
